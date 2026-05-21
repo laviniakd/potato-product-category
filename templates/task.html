@@ -1,0 +1,23 @@
+<!-- Product category annotation template.
+     Called once per image. Instance fields available via instance_obj.*
+     Fields: id, image_url, magazine, decade  -->
+
+<div style="max-width: 700px; margin: 0 auto; font-family: sans-serif;">
+
+  <!-- Image -->
+  <div style="text-align: center; margin-bottom: 12px;">
+    <img
+      src="{{ instance_obj.image_url }}"
+      alt="Advertisement"
+      style="max-width: 600px; max-height: 800px;
+             border: 1px solid #ddd; border-radius: 4px;
+             display: block; margin: 0 auto;"
+    />
+  </div>
+
+  <!-- Provenance (for annotator context — remove if distracting) -->
+  <p style="text-align: center; font-size: 12px; color: #999; margin-bottom: 20px;">
+    {{ instance_obj.magazine }} &middot; {{ instance_obj.decade }}s
+  </p>
+
+</div>
