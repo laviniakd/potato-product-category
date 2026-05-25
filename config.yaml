@@ -6,7 +6,7 @@ data_files:
 
 item_properties:
   id_key: "id"
-  text_key: "image_url"
+  text_key: "id"   # non-URL field so POTATO doesn't display the URL as text
 
 output_annotation_dir: "annotations/"
 output_annotation_format: "json"
@@ -15,8 +15,16 @@ output_annotation_format: "json"
 max_annotations_per_item: 3   # each image gets 3 independent annotations
 max_annotations_per_user: 25  # each worker sees 25 images
 
+# ── Image display ─────────────────────────────────────────────────────────────
+instance_display:
+  fields:
+    - key: image_url
+      type: image
+      display_options:
+        max_width: 600
+        max_height: 800
+
 # ── UI ───────────────────────────────────────────────────────────────────────
-task_layout: "templates/task.html"
 base_html_template: "default"
 site_file: "default"
 jumping_to_id_disabled: true
