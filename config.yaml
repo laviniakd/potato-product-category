@@ -6,7 +6,18 @@ data_files:
 
 item_properties:
   id_key: "id"
-  text_key: "image_url"   # required by POTATO; not displayed (image shown via task_layout)
+  instance_display:
+    display_options:
+      max_width: 600
+      zoomable: true
+  fields:
+    key: image_url
+    type: image
+    text_key: "image_url"
+ 
+  layout:
+    direction: "vertical"        # vertical or horizontal
+    gap: "20px"
 
 output_annotation_dir: "annotations/"
 output_annotation_format: "json"
