@@ -7,9 +7,6 @@ data_files:
 item_properties:
   id_key: "id"
   text_key: "image_url"
-  fields:
-    - key: image_url
-      type: image
 
 output_annotation_dir: "annotations/"
 output_annotation_format: "json"
