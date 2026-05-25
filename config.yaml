@@ -7,17 +7,9 @@ data_files:
 item_properties:
   id_key: "id"
   text_key: "image_url"
-  instance_display:
-    display_options:
-      max_width: 600
-      zoomable: true
   fields:
     key: image_url
     type: image
- 
-  layout:
-    direction: "vertical"        # vertical or horizontal
-    gap: "20px"
 
 output_annotation_dir: "annotations/"
 output_annotation_format: "json"
