@@ -34,7 +34,7 @@ login:
   auto_redirect_delay: 1000
 
 prolific:
-  completion_code: "REPLACEME"   # paste your Prolific completion code here before launch
+  completion_code: "C1GXQDAF"   # paste your Prolific completion code here before launch
   sandbox_mode: false
 
 # ── Annotation scheme ─────────────────────────────────────────────────────────
