@@ -6,6 +6,7 @@ data_files:
 
 item_properties:
   id_key: "id"
+  text_key: "image_url"
   instance_display:
     display_options:
       max_width: 600
@@ -13,7 +14,6 @@ item_properties:
   fields:
     key: image_url
     type: image
-    text_key: "image_url"
  
   layout:
     direction: "vertical"        # vertical or horizontal
