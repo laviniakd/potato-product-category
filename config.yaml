@@ -1,41 +1,41 @@
 annotation_task_name: "Product Category Annotation"
 
-# ── Server ────────────────────────────────────────────────────────────────────
-server:
-  port: 8000
-  host: "0.0.0.0"     # bind to all interfaces so EC2 public IP works
-
 # ── Data ─────────────────────────────────────────────────────────────────────
 data_files:
   - data/annotations_input.jsonl
 
 item_properties:
   id_key: "id"
-  text_key: "image_url"   # POTATO requires a text_key; not displayed (image shown instead)
+  text_key: "image_url"   # required by POTATO; not displayed (image shown via task_layout)
 
 output_annotation_dir: "annotations/"
 output_annotation_format: "json"
 
 # ── Crowdsourcing parameters ──────────────────────────────────────────────────
-annotation_per_instance: 3      # each image needs 3 independent annotations
-instances_per_annotator: 25     # each worker sees 25 images
+max_annotations_per_item: 3   # each image gets 3 independent annotations
+max_annotations_per_user: 25  # each worker sees 25 images
 
 # ── UI ───────────────────────────────────────────────────────────────────────
-instance_per_page: 1            # one image at a time
-jumping_to_id_disabled: true    # workers can't skip to arbitrary items
-hide_navbar: true               # cleaner crowdworker UI
-
-html_layout: "templates/task.html"
+task_layout: "templates/task.html"
 base_html_template: "default"
 site_file: "default"
+jumping_to_id_disabled: true
+hide_navbar: true
 
-# ── Prolific / user config ────────────────────────────────────────────────────
+# ── Login / Prolific ──────────────────────────────────────────────────────────
 # Workers arrive via:
 #   http://YOUR-EC2-IP:8000/?PROLIFIC_PID={%PROLIFIC_PID%}&STUDY_ID={%STUDY_ID%}&SESSION_ID={%SESSION_ID%}
-user_config:
-  allow_all_users: true
-  login_type: "url_direct"
+require_password: false
+
+login:
+  type: "url_direct"
   url_argument: "PROLIFIC_PID"
+  auto_redirect_on_completion: true
+  auto_redirect_delay: 1000
+
+prolific:
+  completion_code: "REPLACEME"   # paste your Prolific completion code here before launch
+  sandbox_mode: false
 
 # ── Annotation scheme ─────────────────────────────────────────────────────────
 annotation_schemes:
