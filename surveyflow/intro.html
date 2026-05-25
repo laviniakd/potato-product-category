@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+    h1 { font-size: 1.5em; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+    h2 { font-size: 1.15em; margin-top: 28px; }
+    a { color: #2563eb; }
+    .examples { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 16px; }
+    .example { text-align: center; max-width: 300px; }
+    .example img { max-width: 280px; max-height: 380px; border: 1px solid #ddd; border-radius: 4px; }
+    .example .label { margin-top: 8px; font-weight: bold; background: #f0fdf4;
+                      border: 1px solid #86efac; border-radius: 4px; padding: 4px 10px;
+                      display: inline-block; }
+    .note { background: #fefce8; border: 1px solid #fde047; border-radius: 6px;
+            padding: 12px 16px; margin: 20px 0; }
+  </style>
+</head>
+<body>
+
+<h1>Product Category Annotation Task</h1>
+
+<p>
+  You will be shown <strong>25 full-page magazine advertisements</strong> from 20th-century
+  American magazines (Time, Esquire, Life, Forbes, Variety). For each ad, select the single
+  best-fitting product category from the list provided.
+</p>
+
+<h2>Category Taxonomy</h2>
+<p>
+  We use a taxonomy based on the
+  <a href="https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Ad%20Product%20Taxonomies/Ad%20Product%20Taxonomy%202.0.tsv"
+     target="_blank">IAB Ad Product Taxonomy 2.0</a>.
+  The 38 categories cover the full range of advertised products and services.
+  If you are unsure of a category's scope, consult the taxonomy link above.
+</p>
+
+<h2>Guidelines</h2>
+<ul>
+  <li>Choose the <strong>most specific</strong> category that fits the primary product being advertised.</li>
+  <li>Base your judgment on the ad's <strong>primary offer</strong>, not secondary imagery or context.</li>
+  <li>If an ad promotes a brand that spans multiple categories (e.g. a department store), choose <em>Retail</em>.</li>
+  <li>Tobacco products (cigarettes, cigars, pipe tobacco) → <em>Tobacco</em>, not Consumer Packaged Goods.</li>
+  <li>Alcohol (beer, wine, spirits) → <em>Alcohol</em>, not Food and Beverage Services.</li>
+  <li>Cars, trucks, motorcycles → <em>Vehicles</em>.</li>
+</ul>
+
+<div class="note">
+  After these instructions you will see <strong>two practice questions</strong> with known correct
+  answers. You must answer both correctly to proceed to the main task.
+</div>
+
+<h2>Example Annotations</h2>
+<div class="examples">
+  <div class="example">
+    <img src="REPLACE_WITH_GOLD_IMAGE_URL_1" alt="Example ad 1" />
+    <p>Correct label: <span class="label">REPLACE_WITH_LABEL_1</span></p>
+  </div>
+  <div class="example">
+    <img src="REPLACE_WITH_GOLD_IMAGE_URL_2" alt="Example ad 2" />
+    <p>Correct label: <span class="label">REPLACE_WITH_LABEL_2</span></p>
+  </div>
+</div>
+
+<p style="margin-top: 32px; color: #666; font-size: 0.9em;">
+  This study is conducted by researchers studying advertising history.
+  Your responses are anonymized and used solely for academic research.
+</p>
+
+</body>
+</html>

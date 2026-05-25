@@ -21,8 +21,24 @@ instance_display:
     - key: image_url
       type: image
       display_options:
-        max_width: 600
-        max_height: 800
+        max_width: 450
+        max_height: 600
+
+# ── Survey flow (intro + prestudy gold examples) ──────────────────────────────
+surveyflow:
+  on: true
+  order:
+    - intro
+    - prestudy
+    - main_annotation
+
+  intro_file: surveyflow/intro.html
+
+  prestudy:
+    on: true
+    data_file: data/prestudy.jsonl
+    minimum_score_per_task:
+      product_category: 1.0   # must get both gold examples correct to proceed
 
 # ── UI ───────────────────────────────────────────────────────────────────────
 base_html_template: "default"
@@ -42,7 +58,7 @@ login:
   auto_redirect_delay: 1000
 
 prolific:
-  completion_code: "C1GXQDAF"   # paste your Prolific completion code here before launch
+  completion_code: "C1GXQDAF"
   sandbox_mode: false
 
 # ── Annotation scheme ─────────────────────────────────────────────────────────
@@ -51,43 +67,43 @@ annotation_schemes:
     name: product_category
     description: "What is the primary product category advertised in this ad?"
     labels:
-      - "Dieting and Weight loss"
-      - "Consumer Electronics"
-      - "Pharmaceuticals"
-      - "Consumer Packaged Goods and Durable Goods"
-      - "Fitness Activities and Sporting Goods"
-      - "Finance and Insurance"
-      - "Food and Beverage Services"
-      - "Health and Medical Services"
-      - "Retail"
-      - "Debated Sensitive Social Issue"
-      - "Sexual Health"
-      - "Home and Garden Services"
-      - "Travel and Tourism"
-      - "Gifts and Holiday Items"
-      - "Clothing and Accessories"
-      - "Weapons and Ammunition"
-      - "Tobacco"
-      - "Real Estate"
-      - "Business and Industrial"
-      - "Non-Profits"
-      - "Collectables and Antiques"
       - "Alcohol"
-      - "Personal/Consumer Telecom"
-      - "Media"
-      - "Family and Parenting"
-      - "Politics"
-      - "Computer Software"
-      - "Cosmetic Services"
-      - "Legal Services"
-      - "Religion and Spirituality"
-      - "Metals"
-      - "Culture and Fine Arts"
-      - "Oil and Gas"
-      - "Pet Ownership"
-      - "Events and Performances"
-      - "Vehicles"
-      - "Education and Careers"
+      - "Business and Industrial"
       - "City or Region"
+      - "Clothing and Accessories"
+      - "Collectables and Antiques"
+      - "Computer Software"
+      - "Consumer Electronics"
+      - "Consumer Packaged Goods and Durable Goods"
+      - "Cosmetic Services"
+      - "Culture and Fine Arts"
+      - "Debated Sensitive Social Issue"
+      - "Dieting and Weight loss"
+      - "Education and Careers"
+      - "Events and Performances"
+      - "Family and Parenting"
+      - "Finance and Insurance"
+      - "Fitness Activities and Sporting Goods"
+      - "Food and Beverage Services"
+      - "Gifts and Holiday Items"
+      - "Health and Medical Services"
+      - "Home and Garden Services"
+      - "Legal Services"
+      - "Media"
+      - "Metals"
+      - "Non-Profits"
+      - "Oil and Gas"
+      - "Personal/Consumer Telecom"
+      - "Pet Ownership"
+      - "Pharmaceuticals"
+      - "Politics"
+      - "Real Estate"
+      - "Religion and Spirituality"
+      - "Retail"
+      - "Sexual Health"
+      - "Tobacco"
+      - "Travel and Tourism"
+      - "Vehicles"
+      - "Weapons and Ammunition"
     required: true
     horizontal: false
