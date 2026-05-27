@@ -105,5 +105,13 @@ annotation_schemes:
       - "Travel and Tourism"
       - "Vehicles"
       - "Weapons and Ammunition"
+      - "⚑ Don't know"
+      - "⚑ Not a cohesive ad"
     required: true
     horizontal: false
+
+  - annotation_type: text
+    name: comment
+    description: "Optional: leave a note if you selected \"Don't know / Not a cohesive ad\", or anything else you'd like to flag about this ad."
+    required: false
+    placeholder: "e.g. image is unclear, ad spans multiple categories, ..."

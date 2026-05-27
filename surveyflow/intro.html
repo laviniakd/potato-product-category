@@ -23,7 +23,8 @@
 
 <p>
   You will be shown <strong>25 full-page magazine advertisements</strong> from 20th-century
-  American magazines (Time, Esquire, Life, Forbes, Variety). For each ad, select the single
+  American magazines (Time, Esquire, Life, Forbes, Variety). Each ad might be one page or take up a two-page spread.
+  For each ad, select the single
   best-fitting product category from the list provided.
 </p>
 
@@ -32,8 +33,14 @@
   We use a taxonomy based on the
   <a href="https://github.com/InteractiveAdvertisingBureau/Taxonomies/blob/main/Ad%20Product%20Taxonomies/Ad%20Product%20Taxonomy%202.0.tsv"
      target="_blank">IAB Ad Product Taxonomy 2.0</a>.
-  The 38 categories cover the full range of advertised products and services.
-  If you are unsure of a category's scope, consult the taxonomy link above.
+  The 38 product categories cover the full range of advertised products and services; two additional options (<strong>⚑ Don't know</strong> and <strong>⚑ Not a cohesive ad</strong>) are available when needed.
+  If you are unsure which top-level category a specific product belongs to, open the taxonomy link and use your browser's search (Ctrl/Cmd+F) to look up the product name.
+  For example, searching <em>watch</em> reveals that watches fall under <strong>Clothing and Accessories</strong>:
+</p>
+<p style="text-align:center; margin: 12px 0 20px;">
+  <img src="https://storage.googleapis.com/label-studio-magazines/product_category_round1/static/example_search.png"
+       alt="Example: searching 'watch' in the IAB taxonomy"
+       style="max-width:100%; border:1px solid #ddd; border-radius:4px;" />
 </p>
 
 <h2>Guidelines</h2>
@@ -44,6 +51,8 @@
   <li>Tobacco products (cigarettes, cigars, pipe tobacco) → <em>Tobacco</em>, not Consumer Packaged Goods.</li>
   <li>Alcohol (beer, wine, spirits) → <em>Alcohol</em>, not Food and Beverage Services.</li>
   <li>Cars, trucks, motorcycles → <em>Vehicles</em>.</li>
+  <li>If you cannot identify a product category from the image, select <strong>⚑ Don't know</strong> and optionally explain in the comment box.</li>
+  <li>If the page does not appear to be a coherent single advertisement (e.g. table of contents, editorial page, detection error), select <strong>⚑ Not a cohesive ad</strong>.</li>
 </ul>
 
 <div class="note">
@@ -54,12 +63,12 @@
 <h2>Example Annotations</h2>
 <div class="examples">
   <div class="example">
-    <img src="REPLACE_WITH_GOLD_IMAGE_URL_1" alt="Example ad 1" />
-    <p>Correct label: <span class="label">REPLACE_WITH_LABEL_1</span></p>
+    <img src="https://storage.googleapis.com/label-studio-magazines/people_validation_round1/life/1944-04-03-16-14-020.jpg" alt="Example ad 1" />
+    <p>Correct label: <span class="label">Oil and Gas</span></p>
   </div>
   <div class="example">
-    <img src="REPLACE_WITH_GOLD_IMAGE_URL_2" alt="Example ad 2" />
-    <p>Correct label: <span class="label">REPLACE_WITH_LABEL_2</span></p>
+    <img src="https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1944-02-21-x-x-66.jpg" alt="Example ad 2" />
+    <p>Correct label: <span class="label">Alcohol</span></p>
   </div>
 </div>
 

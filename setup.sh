@@ -16,7 +16,7 @@ sudo apt-get install -y python3-pip python3-venv git
 echo "=== Creating Python virtual environment ==="
 python3 -m venv venv
 # shellcheck disable=SC1091
-source venv/bin/activate
+source myenv/bin/activate
 
 echo "=== Installing POTATO ==="
 pip install --upgrade pip
