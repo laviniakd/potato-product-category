@@ -40,14 +40,19 @@
     e.preventDefault();
     const params = new URLSearchParams(window.location.search);
     const pid = params.get('PROLIFIC_PID') || params.get('user') || 'unknown';
-    const key = 'debrief_' + pid;
-    localStorage.setItem(key, JSON.stringify({
+    const payload = {
       prolific_pid: pid,
       feedback_interface: document.getElementById('q1').value,
       feedback_observations: document.getElementById('q2').value,
-      submitted_at: new Date().toISOString(),
-    }));
-    window.location.href = 'https://app.prolific.com/submissions/complete?cc=C1GXQDAF';
+    };
+    // POST to companion debrief server on port 8001, then redirect regardless
+    fetch(window.location.protocol + '//' + window.location.hostname + ':8001/save_debrief', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    }).finally(function() {
+      window.location.href = 'https://app.prolific.com/submissions/complete?cc=C1GXQDAF';
+    });
   });
 </script>
 
