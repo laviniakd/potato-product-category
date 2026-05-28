@@ -10,6 +10,7 @@ item_properties:
 
 output_annotation_dir: "annotations/"
 output_annotation_format: "json"
+output_csv_filename: "annotations/progress.csv"
 
 # ── Crowdsourcing parameters ──────────────────────────────────────────────────
 max_annotations_per_item: 3   # each image gets 3 independent annotations
