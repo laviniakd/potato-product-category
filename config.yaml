@@ -25,7 +25,7 @@ instance_display:
         max_width: 450
         max_height: 600
 
-# ── Survey flow (intro + prestudy gold examples) ──────────────────────────────
+# ── Survey flow ───────────────────────────────────────────────────────────────
 phases:
   order:
     - instructions
@@ -35,6 +35,74 @@ phases:
   instructions:
     type: instructions
     file: surveyflow/intro.html
+
+  annotation:
+    type: annotation
+    annotation_schemes:
+      - annotation_type: radio
+        name: product_category
+        description: "What is the primary product category advertised in this ad?"
+        labels:
+          - "Alcohol"
+          - "Business and Industrial"
+          - "City or Region"
+          - "Clothing and Accessories"
+          - "Collectables and Antiques"
+          - "Computer Software"
+          - "Consumer Electronics"
+          - "Consumer Packaged Goods and Durable Goods"
+          - "Cosmetic Services"
+          - "Culture and Fine Arts"
+          - "Debated Sensitive Social Issue"
+          - "Dieting and Weight loss"
+          - "Education and Careers"
+          - "Events and Performances"
+          - "Family and Parenting"
+          - "Finance and Insurance"
+          - "Fitness Activities and Sporting Goods"
+          - "Food and Beverage Services"
+          - "Gifts and Holiday Items"
+          - "Health and Medical Services"
+          - "Home and Garden Services"
+          - "Legal Services"
+          - "Media"
+          - "Metals"
+          - "Non-Profits"
+          - "Oil and Gas"
+          - "Personal/Consumer Telecom"
+          - "Pet Ownership"
+          - "Pharmaceuticals"
+          - "Politics"
+          - "Real Estate"
+          - "Religion and Spirituality"
+          - "Retail"
+          - "Sexual Health"
+          - "Tobacco"
+          - "Travel and Tourism"
+          - "Vehicles"
+          - "Weapons and Ammunition"
+        required: true
+        horizontal: false
+
+      - annotation_type: text
+        name: comment
+        description: "Optional: notes or anything you'd like to flag about this ad."
+        required: false
+        placeholder: "e.g. image is unclear, ad spans multiple categories, ..."
+
+      - annotation_type: checkbox
+        name: not_complete_ad
+        description: ""
+        labels:
+          - "Not a single and complete ad"
+        required: false
+
+      - annotation_type: checkbox
+        name: ambiguous_category
+        description: ""
+        labels:
+          - "Category is very ambiguous"
+        required: false
 
   poststudy:
     type: poststudy
@@ -69,70 +137,3 @@ login:
 prolific:
   completion_code: "C1GXQDAF"
   sandbox_mode: false
-
-# ── Annotation scheme ─────────────────────────────────────────────────────────
-annotation_schemes:
-  - annotation_type: radio
-    name: product_category
-    description: "What is the primary product category advertised in this ad?"
-    labels:
-      - "Alcohol"
-      - "Business and Industrial"
-      - "City or Region"
-      - "Clothing and Accessories"
-      - "Collectables and Antiques"
-      - "Computer Software"
-      - "Consumer Electronics"
-      - "Consumer Packaged Goods and Durable Goods"
-      - "Cosmetic Services"
-      - "Culture and Fine Arts"
-      - "Debated Sensitive Social Issue"
-      - "Dieting and Weight loss"
-      - "Education and Careers"
-      - "Events and Performances"
-      - "Family and Parenting"
-      - "Finance and Insurance"
-      - "Fitness Activities and Sporting Goods"
-      - "Food and Beverage Services"
-      - "Gifts and Holiday Items"
-      - "Health and Medical Services"
-      - "Home and Garden Services"
-      - "Legal Services"
-      - "Media"
-      - "Metals"
-      - "Non-Profits"
-      - "Oil and Gas"
-      - "Personal/Consumer Telecom"
-      - "Pet Ownership"
-      - "Pharmaceuticals"
-      - "Politics"
-      - "Real Estate"
-      - "Religion and Spirituality"
-      - "Retail"
-      - "Sexual Health"
-      - "Tobacco"
-      - "Travel and Tourism"
-      - "Vehicles"
-      - "Weapons and Ammunition"
-    required: true
-    horizontal: false
-
-  - annotation_type: text
-    name: comment
-    description: "Optional: notes or anything you'd like to flag about this ad."
-    required: false
-    placeholder: "e.g. image is unclear, ad spans multiple categories, ..."
-
-  - annotation_type: checkbox
-    name: not_complete_ad
-    description: ""
-    labels:
-      - "Not a single and complete ad"
-    required: false
-
-  - annotation_type: checkbox
-    name: ambiguous_category
-    description: ""
-    labels:
-      - "Category is very ambiguous"
-    required: false
