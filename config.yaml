@@ -90,14 +90,14 @@ phases:
         required: false
         placeholder: "e.g. image is unclear, ad spans multiple categories, ..."
 
-      - annotation_type: checkbox
+      - annotation_type: multiselect
         name: not_complete_ad
         description: ""
         labels:
           - "Not a single and complete ad"
         required: false
 
-      - annotation_type: checkbox
+      - annotation_type: multiselect
         name: ambiguous_category
         description: ""
         labels:
