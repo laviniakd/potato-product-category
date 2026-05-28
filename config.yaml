@@ -37,7 +37,7 @@ phases:
 
   poststudy:
     type: poststudy
-    file: surveyflow/exit_survey.html
+    file: surveyflow/exit_survey.jsonl
 
 # ── UI ───────────────────────────────────────────────────────────────────────
 base_html_template: "default"
@@ -115,14 +115,14 @@ annotation_schemes:
 
   - annotation_type: multiselect
     name: not_complete_ad
-    description: ""
+    description: "Check if applicable"
     labels:
       - "Not a single and complete ad"
     required: false
 
   - annotation_type: multiselect
     name: ambiguous_category
-    description: ""
+    description: "Check if applicable"
     labels:
       - "Category is very ambiguous"
     required: false

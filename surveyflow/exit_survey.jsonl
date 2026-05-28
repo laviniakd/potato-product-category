@@ -1,1 +1,2 @@
-{"id": "debrief", "text": "Thank you for completing the task! Please answer these optional questions before finishing."}
+{"annotation_type": "text", "name": "feedback_interface", "description": "Any feedback on the annotation interface or task design? (optional)", "required": false}
+{"annotation_type": "text", "name": "feedback_observations", "description": "Did you notice anything interesting or surprising in the ads? (optional)", "required": false}
