@@ -28,18 +28,11 @@ instance_display:
 phases:
   order:
     - instructions
-    - training
     - annotation
 
   instructions:
     type: instructions
     file: surveyflow/intro.html
-
-  training:
-    type: training
-    file: data/prestudy.jsonl
-    passing_criteria:
-      require_all_correct: true
 
 # ── UI ───────────────────────────────────────────────────────────────────────
 base_html_template: "default"
@@ -106,13 +99,25 @@ annotation_schemes:
       - "Travel and Tourism"
       - "Vehicles"
       - "Weapons and Ammunition"
-      - "⚑ Don't know"
-      - "⚑ Not a cohesive ad"
     required: true
     horizontal: false
 
   - annotation_type: text
     name: comment
-    description: "Optional: leave a note if you selected \"Don't know / Not a cohesive ad\", or anything else you'd like to flag about this ad."
+    description: "Optional: notes or anything you'd like to flag about this ad."
     required: false
     placeholder: "e.g. image is unclear, ad spans multiple categories, ..."
+
+  - annotation_type: checkbox
+    name: not_complete_ad
+    description: ""
+    labels:
+      - "Not a single and complete ad"
+    required: false
+
+  - annotation_type: checkbox
+    name: ambiguous_category
+    description: ""
+    labels:
+      - "Category is very ambiguous"
+    required: false

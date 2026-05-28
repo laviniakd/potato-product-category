@@ -380,6 +380,7 @@
 {"id": "1961-04-01-87-7-29", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/forbes/1961-04-01-87-7-29.jpg", "magazine": "forbes", "decade": 1960}
 {"id": "1960-09-01-86-5-49", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/forbes/1960-09-01-86-5-49.jpg", "magazine": "forbes", "decade": 1960}
 {"id": "1961-11-15-88-10-14", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/forbes/1961-11-15-88-10-14.jpg", "magazine": "forbes", "decade": 1960}
+{"id": "gold_1", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/life/1938-08-22-5-8-34__1938-08-22-5-8-35.jpg", "magazine": "life", "decade": 1930, "is_gold": true}
 {"id": "1960-11-15-86-10-38", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/forbes/1960-11-15-86-10-38.jpg", "magazine": "forbes", "decade": 1960}
 {"id": "1961-07-15-88-2-34", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/forbes/1961-07-15-88-2-34.jpg", "magazine": "forbes", "decade": 1960}
 {"id": "1960-03-01-85-5-03", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/forbes/1960-03-01-85-5-03.jpg", "magazine": "forbes", "decade": 1960}
@@ -660,6 +661,7 @@
 {"id": "1925-07-27-x-x-18__1925-07-27-x-x-19", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1925-07-27-x-x-18__1925-07-27-x-x-19.jpg", "magazine": "time", "decade": 1920}
 {"id": "1928-12-17-x-x-2__1928-12-17-x-x-3", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1928-12-17-x-x-2__1928-12-17-x-x-3.jpg", "magazine": "time", "decade": 1920}
 {"id": "1924-09-29-x-x-30__1924-09-29-x-x-31", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1924-09-29-x-x-30__1924-09-29-x-x-31.jpg", "magazine": "time", "decade": 1920}
+{"id": "gold_2", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1928-08-20-x-x-8.jpg", "magazine": "time", "decade": 1920, "is_gold": true}
 {"id": "1929-09-23-x-x-38__1929-09-23-x-x-39", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1929-09-23-x-x-38__1929-09-23-x-x-39.jpg", "magazine": "time", "decade": 1920}
 {"id": "1924-04-14-x-x-30__1924-04-14-x-x-31", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1924-04-14-x-x-30__1924-04-14-x-x-31.jpg", "magazine": "time", "decade": 1920}
 {"id": "1929-12-16-x-x-40__1929-12-16-x-x-41", "image_url": "https://storage.googleapis.com/label-studio-magazines/product_category_round1/time/1929-12-16-x-x-40__1929-12-16-x-x-41.jpg", "magazine": "time", "decade": 1920}
