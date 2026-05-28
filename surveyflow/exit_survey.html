@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: sans-serif; max-width: 680px; margin: 60px auto; padding: 0 20px; color: #333; line-height: 1.6; }
+    h1 { font-size: 1.4em; border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+    label { display: block; font-weight: bold; margin: 24px 0 6px; }
+    textarea { width: 100%; padding: 10px; font-size: 0.95em; border: 1px solid #ccc;
+               border-radius: 4px; resize: vertical; min-height: 80px; box-sizing: border-box; }
+    .note { color: #777; font-size: 0.88em; margin-top: 2px; }
+    button { margin-top: 28px; padding: 10px 28px; background: #2563eb; color: white;
+             border: none; border-radius: 4px; font-size: 1em; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+
+<h1>You're almost done — thank you!</h1>
+
+<p>
+  You have completed all annotation items. Before we redirect you back to Prolific,
+  please consider answering these two optional questions.
+</p>
+
+<form id="debrief-form">
+  <label for="q1">Any feedback on the annotation interface or task design?</label>
+  <textarea id="q1" placeholder="e.g. the categories were confusing, the images were too small, ..."></textarea>
+  <span class="note">Optional</span>
+
+  <label for="q2">Did you notice anything interesting or surprising in the ads?</label>
+  <textarea id="q2" placeholder="e.g. recurring themes, unusual products, historical details, ..."></textarea>
+  <span class="note">Optional</span>
+
+  <button type="submit">Submit and finish</button>
+</form>
+
+<script>
+  document.getElementById('debrief-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const params = new URLSearchParams(window.location.search);
+    const pid = params.get('PROLIFIC_PID') || params.get('user') || 'unknown';
+    const key = 'debrief_' + pid;
+    localStorage.setItem(key, JSON.stringify({
+      prolific_pid: pid,
+      feedback_interface: document.getElementById('q1').value,
+      feedback_observations: document.getElementById('q2').value,
+      submitted_at: new Date().toISOString(),
+    }));
+    window.location.href = 'https://app.prolific.com/submissions/complete?cc=C1GXQDAF';
+  });
+</script>
+
+</body>
+</html>
