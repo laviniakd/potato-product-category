@@ -29,10 +29,24 @@ phases:
   order:
     - instructions
     - annotation
+    - poststudy
 
   instructions:
     type: instructions
     file: surveyflow/intro.html
+
+  poststudy:
+    type: poststudy
+    file: surveyflow/exit_survey.jsonl
+    annotation_schemes:
+      - annotation_type: text
+        name: feedback_interface
+        description: "Do you have any feedback on the annotation task design or interface? (optional)"
+        required: false
+      - annotation_type: text
+        name: feedback_observations
+        description: "Did you notice anything interesting or surprising in the ads? (optional)"
+        required: false
 
 # ── UI ───────────────────────────────────────────────────────────────────────
 base_html_template: "default"
