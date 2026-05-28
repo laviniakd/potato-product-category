@@ -14,7 +14,7 @@ sudo apt-get update -qq
 sudo apt-get install -y python3-pip python3-venv git
 
 echo "=== Creating Python virtual environment ==="
-python3 -m venv venv
+python3 -m venv myenv
 # shellcheck disable=SC1091
 source myenv/bin/activate
 

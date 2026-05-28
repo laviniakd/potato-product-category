@@ -25,20 +25,21 @@ instance_display:
         max_height: 600
 
 # ── Survey flow (intro + prestudy gold examples) ──────────────────────────────
-surveyflow:
-  on: true
+phases:
   order:
-    - intro
-    - prestudy
-    - main_annotation
+    - instructions
+    - training
+    - annotation
 
-  intro_file: surveyflow/intro.html
+  instructions:
+    type: instructions
+    file: surveyflow/intro.html
 
-  prestudy:
-    on: true
-    data_file: data/prestudy.jsonl
-    minimum_score_per_task:
-      product_category: 1.0   # must get both gold examples correct to proceed
+  training:
+    type: training
+    file: data/prestudy.jsonl
+    passing_criteria:
+      require_all_correct: true
 
 # ── UI ───────────────────────────────────────────────────────────────────────
 base_html_template: "default"
