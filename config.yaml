@@ -64,7 +64,7 @@ prolific:
 annotation_schemes:
   - annotation_type: radio
     name: product_category
-    description: "What is the primary product category advertised in this ad?"
+    description: "What is the primary product category advertised in this ad? &nbsp;<a href='https://storage.googleapis.com/label-studio-magazines/product_category_round1/static/taxonomy.html' target='_blank' style='font-size:0.85em;'>Search IAB taxonomy &rarr;</a>"
     labels:
       - "Alcohol"
       - "Business and Industrial"

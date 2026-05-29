@@ -1,32 +1,9 @@
 <!-- Product category annotation template.
      Called once per image. Instance fields available via instance_obj.*
-     Fields: id, image_url, magazine, decade  -->
+     Fields: id, image_url, magazine, decade
+     Note: the image itself is rendered by instance_display in config.yaml. -->
 
-<div style="max-width: 700px; margin: 0 auto; font-family: sans-serif;">
-
-  <!-- Persistent taxonomy reference link -->
-  <div style="text-align: right; margin-bottom: 8px; font-size: 13px;">
-    <a href="https://storage.googleapis.com/label-studio-magazines/product_category_round1/static/taxonomy.html"
-       target="_blank"
-       style="color: #2563eb; text-decoration: none;">
-      &#128270; IAB taxonomy reference &rarr;
-    </a>
-  </div>
-
-  <!-- Image -->
-  <div style="text-align: center; margin-bottom: 12px;">
-    <img
-      src="{{ text }}"
-      alt="Advertisement"
-      style="max-width: 600px; max-height: 800px;
-             border: 1px solid #ddd; border-radius: 4px;
-             display: block; margin: 0 auto;"
-    />
-  </div>
-
-  <!-- Provenance (for annotator context — remove if distracting) -->
-  <p style="text-align: center; font-size: 12px; color: #999; margin-bottom: 20px;">
-    {{ instance.magazine }} &middot; {{ instance.decade }}s
-  </p>
-
-</div>
+<!-- Provenance (magazine + decade shown under the image) -->
+<p style="text-align: center; font-size: 12px; color: #999; margin-top: 4px; margin-bottom: 0;">
+  {{ instance.magazine }} &middot; {{ instance.decade }}s
+</p>
