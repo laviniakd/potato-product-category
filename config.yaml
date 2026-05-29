@@ -43,7 +43,6 @@ phases:
 base_html_template: "default"
 site_file: "default"
 annotation_codebook_url: "https://storage.googleapis.com/label-studio-magazines/product_category_round1/static/taxonomy.html"
-customjs: "static/custom.js"
 jumping_to_id_disabled: true
 hide_navbar: true
 
