@@ -18,6 +18,18 @@
   </style>
 </head>
 <body>
+<script>
+  // Record session start time on the debrief server (port 8001).
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var pid = params.get('PROLIFIC_PID') || params.get('user') || 'unknown';
+    fetch(window.location.protocol + '//' + window.location.hostname + ':8001/record_start', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({prolific_pid: pid}),
+    }).catch(function() {});  // silent on failure
+  })();
+</script>
 
 <h1>Product Category Annotation Task</h1>
 

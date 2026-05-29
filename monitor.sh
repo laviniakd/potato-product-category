@@ -73,4 +73,25 @@ print("-" * 46)
 print(f"{'TOTAL':<30} {total_items:>6}  {total_gold_correct}/{total_gold_seen}")
 print()
 print(f"Annotators active: {len(annotator_rows)}")
+
+# Timing summary from session_log.jsonl
+import json as _json, os as _os
+log_path = os.path.join(ann_dir, "session_log.jsonl")
+if os.path.exists(log_path):
+    durations = []
+    with open(log_path) as f:
+        for line in f:
+            try:
+                rec = _json.loads(line)
+                d = rec.get("duration_seconds")
+                if d is not None:
+                    durations.append(d)
+            except Exception:
+                pass
+    if durations:
+        avg = sum(durations) / len(durations)
+        mn, mx = min(durations), max(durations)
+        print()
+        print(f"Completion times (n={len(durations)}): "
+              f"avg {avg/60:.1f}m  min {mn/60:.1f}m  max {mx/60:.1f}m")
 EOF
