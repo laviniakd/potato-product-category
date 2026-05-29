@@ -1,9 +1,30 @@
 <!-- Product category annotation template.
-     Called once per image. Instance fields available via instance_obj.*
-     Fields: id, image_url, magazine, decade
-     Note: the image itself is rendered by instance_display in config.yaml. -->
+     The image is rendered by instance_display in config.yaml.
+     This file adds provenance text and injects the persistent taxonomy link. -->
 
-<!-- Provenance (magazine + decade shown under the image) -->
+<!-- Provenance -->
 <p style="text-align: center; font-size: 12px; color: #999; margin-top: 4px; margin-bottom: 0;">
   {{ instance.magazine }} &middot; {{ instance.decade }}s
 </p>
+
+<script>
+(function() {
+  // Inject a sticky taxonomy link banner once, at the top of the page.
+  if (document.getElementById('taxonomy-link-banner')) return;
+  var banner = document.createElement('div');
+  banner.id = 'taxonomy-link-banner';
+  banner.style.cssText = [
+    'position:fixed', 'top:0', 'right:0', 'z-index:9999',
+    'background:#eff6ff', 'border-bottom:1px solid #bfdbfe',
+    'border-left:1px solid #bfdbfe', 'border-radius:0 0 0 6px',
+    'padding:5px 14px', 'font-size:13px', 'font-family:sans-serif'
+  ].join(';');
+  var link = document.createElement('a');
+  link.href = 'https://storage.googleapis.com/label-studio-magazines/product_category_round1/static/taxonomy.html';
+  link.target = '_blank';
+  link.textContent = '\uD83D\uDD0E IAB taxonomy \u2192';
+  link.style.cssText = 'color:#2563eb;text-decoration:none;';
+  banner.appendChild(link);
+  document.body.appendChild(banner);
+})();
+</script>
