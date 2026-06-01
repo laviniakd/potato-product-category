@@ -47,7 +47,7 @@ for fpath in sorted(files):
     for item_id, annotation in data.items():
         n_items += 1
         # Check gold items (id like gold_1_b3, gold_2_b12, etc.)
-        base = item_id.rsplit("_b", 1)[0] if "_b" in item_id else item_id
+        base = item_id.rsplit("_b", 1)[0] if "_b" in item_id else item_id  # handles old _bN copies too
         if base in GOLD_ANSWERS:
             gold_seen += 1
             label = annotation.get("product_category", {})
