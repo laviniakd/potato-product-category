@@ -57,8 +57,10 @@ login:
   auto_redirect_on_completion: true
   auto_redirect_delay: 1000
 
+completion_code: "C1GXQDAF"   # top-level so POTATO's done() route finds it
+
 prolific:
-  completion_code: "C1GXQDAF"
+  completion_code: "C1GXQDAF"  # also keep nested in case POTATO reads it here
   sandbox_mode: false
 
 # ── Annotation schemes (top-level required by POTATO) ─────────────────────────
