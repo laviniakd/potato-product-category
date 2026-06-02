@@ -1,2 +1,2 @@
-{"annotation_type": "text", "name": "feedback_interface", "description": "Any feedback on the annotation interface or task design? (optional)", "required": false}
+{"annotation_type": "text", "name": "feedback_interface", "description": "Thank you for your annotations! Here are two final optional questions.\n\nAny feedback on the annotation interface or task design?", "required": false}
 {"annotation_type": "text", "name": "feedback_observations", "description": "Did you notice anything interesting or surprising in the ads? (optional)", "required": false}
