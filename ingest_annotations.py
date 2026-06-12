@@ -21,6 +21,7 @@ import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 GCS_BUCKET = "label-studio-magazines"
 GOLD_ANSWERS = {"gold_1": "Alcohol", "gold_2": "Vehicles"}
@@ -40,7 +41,7 @@ def _extract_label(label_list: list, schema: str) -> str:
     return ""
 
 
-def _is_gold(item_id: str) -> str | None:
+def _is_gold(item_id: str) -> Optional[str]:
     """Return base gold key (e.g. 'gold_1') if item_id is a gold item, else None."""
     if item_id in GOLD_ANSWERS:
         return item_id
@@ -51,7 +52,7 @@ def _is_gold(item_id: str) -> str | None:
     return None
 
 
-def _duration_seconds(behav: dict) -> float | None:
+def _duration_seconds(behav: dict) -> Optional[float]:
     """Estimate total session duration from behavioral data session_start timestamps."""
     timestamps = [
         v["session_start"]
