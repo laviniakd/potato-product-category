@@ -16,17 +16,16 @@ max_annotations_per_item: 3   # each image gets 3 independent annotations
 max_annotations_per_user: 23  # each worker sees 23 regular + 2 gold = 25 total
 
 # ── Quality control ───────────────────────────────────────────────────────────
-quality_control:
-  gold_standards:
-    enabled: true
-    items_file: data/gold_items.jsonl
-    mode: mixed
-    frequency: 11   # inject gold after every 11 regular items; 2 injections in 23 = both gold items seen
-    accuracy:
-      min_threshold: 0.0   # track only, no blocking
-      evaluation_count: 2
-    feedback:
-      show_correct_answer: false
+gold_standards:
+  enabled: true
+  items_file: data/gold_items.jsonl
+  mode: mixed
+  frequency: 11   # inject gold after every 11 regular items; 2 injections in 23 = both gold items seen
+  accuracy:
+    min_threshold: 0.0   # track only, no blocking
+    evaluation_count: 2
+  feedback:
+    show_correct_answer: false
 
 # ── Image display ─────────────────────────────────────────────────────────────
 instance_display:
