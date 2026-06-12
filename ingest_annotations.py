@@ -2,8 +2,8 @@
 ingest_annotations.py
 
 Downloads POTATO user_state.json files from GCS and produces:
-  annotations/pilot_annotations.csv   — one row per (annotator, item)
-  annotations/pilot_summary.txt       — human-readable summary
+  annotations/annotations.csv   — one row per (annotator, item)
+  annotations/summary.txt       — human-readable summary
 
 Usage:
     python ingest_annotations.py [--gcs_prefix product-category-annotations] [--out_dir annotations/]
@@ -150,7 +150,7 @@ def print_summary(rows: list[dict]) -> str:
     gold = [r for r in rows if r["is_gold"]]
 
     p("=" * 70)
-    p("PILOT ANNOTATION SUMMARY")
+    p("ANNOTATION SUMMARY")
     p(f"Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     p("=" * 70)
     p()
@@ -271,7 +271,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--gcs_prefix", default="product-category-annotations",
                         help="GCS prefix (under label-studio-magazines bucket)")
-    parser.add_argument("--local_cache", default="/tmp/pilot_annotations",
+    parser.add_argument("--local_cache", default="/tmp/annotations",
                         help="Local directory to cache downloaded files")
     parser.add_argument("--no_download", action="store_true",
                         help="Skip GCS download; use existing files in --local_cache")
@@ -293,10 +293,10 @@ def main():
     rows = parse_annotations(states)
     summary = print_summary(rows)
 
-    csv_path = out_dir / "pilot_annotations.csv"
+    csv_path = out_dir / "annotations.csv"
     write_csv(rows, csv_path)
 
-    summary_path = out_dir / "pilot_summary.txt"
+    summary_path = out_dir / "summary.txt"
     summary_path.write_text(summary)
     print(f"Summary written: {summary_path}")
 
